@@ -100,7 +100,7 @@ tags:: programming
 	- And if you look carefully, they are very much alike!
 		- The whole thing is wrapped in an `<a>` -> `[:a .... ]`
 		- Then you have the address `href="#/page/hiccup"` -> `(str "#/page/" page)`, which is Clojure for: **str** returns a string, in our case it concatenates (glues together)  `"#/page/"` and the value of `page`
-		- Last you have the visible part of the link `Hiccup` -> `(clojure.string/capitalize page)`
+		- Last you have the visible part of the link `Hiccup` -> `(clojure.string/capitalize page)`, which is not hard to guess
 		-
 	- query-table:: false
 	  page-list:: true
