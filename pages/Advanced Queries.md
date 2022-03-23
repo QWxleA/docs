@@ -1,6 +1,6 @@
 tags:: programming
 
-- The database that Logseq use is [Datascript](https://github.com/tonsky/datascript), which is an immutable in-memory database and [Datalog](https://en.wikipedia.org/wiki/Datalog) query engine in Clojure and ClojureScript.
+- The database that Logseq uses is [Datascript](https://github.com/tonsky/datascript), which is an immutable in-memory database and [Datalog](https://en.wikipedia.org/wiki/Datalog) query engine in Clojure and ClojureScript.
 - **Resources**
 	- [Learn Datalog Today](http://www.learndatalogtoday.org/) is a great first reference if you're not familiar with Datalog.
 	- [Datomic query documentation](https://docs.datomic.com/query.html) - Thorough reference for datomic dialect of Datalog. Explains most datalog concepts well.
