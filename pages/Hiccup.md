@@ -177,9 +177,9 @@ tags:: programming
 		  )
 		  }
 		  #+END_QUERY
-		-
-		- TODO first todo
-		- TODO second todo
+		- #### This is the data used in the previous query:
+			- TODO first todo
+			- TODO second todo
 - ### Expanding seqs
 - If you include a Clojure seq in the body of an element vector:
 - ```clojure
