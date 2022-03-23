@@ -122,6 +122,7 @@ tags:: programming
 		           )}
 		  #+END_QUERY
 - ### Table views
+	- A re
 	- **Query to create a table with page and todo count**
 	  link:: [Discord](https://discord.com/channels/725182569297215569/743139225746145311/921337299164356658)
 	  date:: [[2021-12-17]]
@@ -176,6 +177,8 @@ tags:: programming
 		  )
 		  }
 		  #+END_QUERY
+		- TODO first todo
+		- TODO second todo
 - ### Expanding seqs
 - If you include a Clojure seq in the body of an element vector:
 - ```clojure
