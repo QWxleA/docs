@@ -63,7 +63,7 @@ tags:: programming
 		- [:h2 {:style {:color "red"}} "h2 title"]
 		  [:p "Hello " [:em "World!"]]
 - ### Using Hiccup for :views
--
+	- [[Advanced Queries]] support custom build views for search results. These views are a combination of (a small sub-set of) Clojure and Hiccup. It's not the easiest
 - ### Expanding seqs
 - If you include a Clojure seq in the body of an element vector:
 - ```clojure
