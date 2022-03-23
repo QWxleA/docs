@@ -217,6 +217,6 @@ difficulty:: intermediate
   :query-table false
   }
   #+END_QUERY
--- ### Additional resources
+	- ### Additional resources
 	- [Hiccup Tips](https://ericnormand.me/mini-guide/hiccup-tips)
 	- [Tutorial on Medium](https://medium.com/makimo-tech-blog/hiccup-lightning-tutorial-6494e477f3a5)
