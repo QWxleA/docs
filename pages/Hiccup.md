@@ -191,7 +191,7 @@ difficulty:: intermediate
         ;[(get ?bprops :distanse "nil") ?bs]
         ;[(not= ?bs "nil")]
          ]
-  :view (fn [result] (for [r result] [:pre (pr-str (get-in r [:block/name) r)]))
+  :view (fn [result] (for [r result] [:pre (pr-str (get-in r [:block/properties :language]) r)]))
   }
   #+END_QUERY
 - query-table:: false
