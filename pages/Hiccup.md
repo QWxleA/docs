@@ -1,4 +1,6 @@
 tags:: programming
+language:: hiccup and clojure
+difficulty:: intermediate
 
 - Hiccup is a [[domain-specific language]] for generating HTML, used mostly in Clojure community.
 - For every day use you need very little knowledge of Hiccup, and fortunately (most of it) is surprisingly simple.
@@ -192,8 +194,6 @@ tags:: programming
   :view (fn [result] (for [r result] [:pre (pr-str (get r :block/name) r)]))
   }
   #+END_QUERY
-
-
 - query-table:: false
   #+BEGIN_QUERY
   {
