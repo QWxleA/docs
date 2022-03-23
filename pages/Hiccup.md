@@ -59,12 +59,12 @@ tags:: programming
 	  [:div.comment "..."]
 	  ```
 	- The most amazing thing is, you can actually do this _straight inside Logseq_:
+		- ```clojure
+		  [:h2 {:style {:color "red"}} "h2 title"]
+		  [:p "Hello " [:em "World!"]]
+		  ```
 		- [:h2 {:style {:color "red"}} "h2 title"]
-		  	  [:p "Hello " [:em "World!"]]
-	- ```clojure
-	  [:h2 {:style {:color "red"}} "h2 title"]
-	  [:p "Hello " [:em "World!"]]
-	  ```
+		  [:p "Hello " [:em "World!"]]
 - ### Expanding seqs
   
   If you include a Clojure seq in the body of an element vector:
