@@ -62,7 +62,7 @@ tags:: programming
 		  ```
 		- [:h2 {:style {:color "red"}} "h2 title"]
 		  [:p "Hello " [:em "World!"]]
-- ### Using Hiccup for :views
+- ## Using Hiccup for :views
 	- [[Advanced Queries]] support custom-build views for search results. These views are a combination of (a small sub-set of) Clojure and Hiccup. It's not the easiest combination, but without a doubt you can build amazing things with it.
 	- ``` clojure
 	  #+BEGIN_QUERY
@@ -121,62 +121,61 @@ tags:: programming
 		                ]
 		           )}
 		  #+END_QUERY
-		- ### Table views
-		-
-		- **Query to create a table with page and todo count**
-		  link:: [Discord](https://discord.com/channels/725182569297215569/743139225746145311/921337299164356658)
-		  date:: [[2021-12-17]]
-			- query-table:: false
-			  ```clojure
-			  #+BEGIN_QUERY 
-			  {:title "TODO by page"
-			    :query     [:find (pull ?b [:block/marker :block/parent {:block/page
-			       [:db/id :block/name]}])
-			    :where
-			             [?b :block/marker ?marker]
-			             [(= "TODO" ?marker)] 
-			    ]
-			  :result-transform (fn [result]
-			                          (map (fn [[key value]] {:page (get key :block/name) :count (count value)}) (group-by :block/page result))
-			                  )
-			  :view (fn [rows] [:table 
-			   [:thead 
-			    [:tr 
-			     [:th "Page"] 
-			     [:th "Count"] ] ] 
-			   [:tbody 
-			  (for [r rows] [:tr 
-			     [:td [:a {:href (str "#/page/" (get r :page))} (get r :page)] ] 
-			     [:td (get r :count)] ])
-			     ]]
-			  )
-			  }
-			  #+END_QUERY
-			  ```
-			- #+BEGIN_QUERY 
-			  {:title "TODO by page"
-			    :query     [:find (pull ?b [:block/marker :block/parent {:block/page
-			       [:db/id :block/name]}])
-			    :where
-			             [?b :block/marker ?marker]
-			             [(= "TODO" ?marker)] 
-			    ]
-			  :result-transform (fn [result]
-			                          (map (fn [[key value]] {:page (get key :block/name) :count (count value)}) (group-by :block/page result))
-			                  )
-			  :view (fn [rows] [:table 
-			   [:thead 
-			    [:tr 
-			     [:th "Page"] 
-			     [:th "Count"] ] ] 
-			   [:tbody 
-			  (for [r rows] [:tr 
-			     [:td [:a {:href (str "#/page/" (get r :page))} (get r :page)] ] 
-			     [:td (get r :count)] ])
-			     ]]
-			  )
-			  }
-			  #+END_QUERY
+- ### Table views
+	- **Query to create a table with page and todo count**
+	  link:: [Discord](https://discord.com/channels/725182569297215569/743139225746145311/921337299164356658)
+	  date:: [[2021-12-17]]
+		- query-table:: false
+		  ```clojure
+		  #+BEGIN_QUERY 
+		  {:title "TODO by page"
+		    :query     [:find (pull ?b [:block/marker :block/parent {:block/page
+		       [:db/id :block/name]}])
+		    :where
+		             [?b :block/marker ?marker]
+		             [(= "TODO" ?marker)] 
+		    ]
+		  :result-transform (fn [result]
+		                          (map (fn [[key value]] {:page (get key :block/name) :count (count value)}) (group-by :block/page result))
+		                  )
+		  :view (fn [rows] [:table 
+		   [:thead 
+		    [:tr 
+		     [:th "Page"] 
+		     [:th "Count"] ] ] 
+		   [:tbody 
+		  (for [r rows] [:tr 
+		     [:td [:a {:href (str "#/page/" (get r :page))} (get r :page)] ] 
+		     [:td (get r :count)] ])
+		     ]]
+		  )
+		  }
+		  #+END_QUERY
+		  ```
+		- #+BEGIN_QUERY 
+		  {:title "TODO by page"
+		    :query     [:find (pull ?b [:block/marker :block/parent {:block/page
+		       [:db/id :block/name]}])
+		    :where
+		             [?b :block/marker ?marker]
+		             [(= "TODO" ?marker)] 
+		    ]
+		  :result-transform (fn [result]
+		                          (map (fn [[key value]] {:page (get key :block/name) :count (count value)}) (group-by :block/page result))
+		                  )
+		  :view (fn [rows] [:table 
+		   [:thead 
+		    [:tr 
+		     [:th "Page"] 
+		     [:th "Count"] ] ] 
+		   [:tbody 
+		  (for [r rows] [:tr 
+		     [:td [:a {:href (str "#/page/" (get r :page))} (get r :page)] ] 
+		     [:td (get r :count)] ])
+		     ]]
+		  )
+		  }
+		  #+END_QUERY
 - ### Expanding seqs
 - If you include a Clojure seq in the body of an element vector:
 - ```clojure
