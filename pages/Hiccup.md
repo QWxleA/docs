@@ -196,16 +196,13 @@ difficulty:: intermediate
   #+END_QUERY
 - query-table:: false
   #+BEGIN_QUERY
-  {
+  {:title [:h3 "Programming languages used in Logseq"]
    :query [:find (pull ?p [*])
         :where
         [page-tags ?p #{"programming"}]
         ;[(get ?bprops :distanse "nil") ?bs]
         ;[(not= ?bs "nil")]
          ]
-  :result-transform (fn [result]
-                       (sort-by (fn [s]
-                          (get-in s [:block/page :block/journal-day])) (fn [a b] (compare b a)) result)) 
   :view (fn [rows] [:table 
    [:thead 
     [:tr 
@@ -215,8 +212,8 @@ difficulty:: intermediate
    [:tbody 
   (for [r rows] [:tr 
      [:td (get r [:block/name])] 
-     [:td (get-in r [:block/properties :creator])]
-     [:td (get-in r [:block/properties :description])] ])
+     [:td (get-in r [:block/properties :language])]
+     [:td (get-in r [:block/properties :difficulty])] ])
      ]]
   )
   }
