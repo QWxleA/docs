@@ -35,7 +35,7 @@
 	  [tag & body]
 	  [tag attributes & body]
 	  ```
-	- The first item in the vector is the tag name. It is mandatory, and should be a keyword, string or symbol.
+	- The first item in the vector is the tag name. It is mandatory, and should be a keyword (`:h3`), string (`"This is hiccup!"`) or a symbol ().
 	- The second item may optionally be a map of attributes.
 	- All subsequent items in the vector are treated as the element body. This can include strings or nested tag vectors, for example:
 	- ```clojure
