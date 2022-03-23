@@ -69,11 +69,11 @@ tags:: programming
    :query [:find ?name
          :in $ ?tag
          :where
-         [page-tags ?p ?tag]
-         ;[?t :block/name ?tag]
-         ;[?p :block/tags ?t]
-         ;[?p :block/name ?name]
-  ]
+         [all-page-tags ?p ?tag]
+         [?t :block/name ?tag]
+         [?p :block/tags ?t]
+         [?p :block/name ?name]
+         ]
    :inputs ["programming"]
    :view (fn [result]
          [:div.flex.flex-col
