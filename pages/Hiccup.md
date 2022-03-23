@@ -200,7 +200,7 @@ tags:: programming
                    [:th {:width "20%"} "Creator"]
                    [:th {:width "60%"} "Description"]]]
                  [:tbody
-                  (for [{:block/keys [title properties]} blocks]
+                  (for [{:block/properties [title properties]} blocks]
                     [:tr
                      [:td (second (:url (second (first title))))]
                      [:td (get properties "creator")]
