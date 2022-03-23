@@ -179,6 +179,33 @@ tags:: programming
 		- #### This is the data used in the previous query:
 			- TODO first todo
 			- TODO second todo
+	- ### A more complete table
+- #+BEGIN_QUERY
+  {:title [:h2 "Programming languages list"]
+   :query [:find (pull ?b [*])
+           :where
+           [?b :block/properties ?p]
+           [(get ?p "type") ?t]
+           [(= "programming_lang" ?t)]]
+   :view (fn [result]
+           (when (seq result)
+             (let [blocks (flatten result)]
+               [:div.table-wrapper
+                [:table.table-auto
+                 [:thead
+                  [:tr
+                   [:th {:width "20%"} "Name"]
+                   [:th {:width "20%"} "Creator"]
+                   [:th {:width "60%"} "Description"]]]
+                 [:tbody
+                  (for [{:block/keys [title properties]} blocks]
+                    [:tr
+                     [:td (second (:url (second (first title))))]
+                     [:td (get properties "creator")]
+                     [:td (get properties "description")]])]]])))
+   }
+  #+END_QUERY
+-
 - ### Additional resources
 	- [Hiccup Tips](https://ericnormand.me/mini-guide/hiccup-tips)
 	- [Tutorial on Medium](https://medium.com/makimo-tech-blog/hiccup-lightning-tutorial-6494e477f3a5)
