@@ -181,42 +181,30 @@ difficulty:: intermediate
 		- #### This is the data used in the previous query:
 			- TODO first todo
 			- TODO second todo
-	- ### A more complete table
-- query-table:: false
-  #+BEGIN_QUERY
-  {
-   :query [:find (pull ?p [*])
-        :where
-        [page-tags ?p #{"programming"}]
-        ;[(get ?bprops :distanse "nil") ?bs]
-        ;[(not= ?bs "nil")]
-         ]
-  :view (fn [result] (for [r result] [:pre (pr-str (get-in r [:block/properties :language]) r)]))
-  }
-  #+END_QUERY
-- query-table:: false
-  #+BEGIN_QUERY
-  {:title [:h3 "Programming languages used in Logseq"]
-   :query [:find (pull ?p [*])
-        :where
-        [page-tags ?p #{"programming"}]
-         ]
-  :view (fn [rows] [:table 
-   [:thead 
-    [:tr 
-     [:th "Page"] 
-     [:th "Language"]
-     [:th "Difficulty"] ] ] 
-   [:tbody 
-  (for [r rows] [:tr 
-     [:td [:a {:href (str "#/page/" (get r :block/name))} (clojure.string/capitalize (get r :block/name))]] 
-     [:td (get-in r [:block/properties :language])]
-     [:td (get-in r [:block/properties :difficulty])] ])
-     ]]
-  )
-  :query-table false
-  }
-  #+END_QUERY
-	- ### Additional resources
+- ### A more complete table
+	- query-table:: false
+	  #+BEGIN_QUERY
+	  {:title [:h3 "Programming languages used in Logseq"]
+	   :query [:find (pull ?p [*])
+	        :where
+	        [page-tags ?p #{"programming"}]
+	         ]
+	  :view (fn [rows] [:table 
+	   [:thead 
+	    [:tr 
+	     [:th "Page"] 
+	     [:th "Language"]
+	     [:th "Difficulty"] ] ] 
+	   [:tbody 
+	  (for [r rows] [:tr 
+	     [:td [:a {:href (str "#/page/" (get r :block/name))} (clojure.string/capitalize (get r :block/name))]] 
+	     [:td (get-in r [:block/properties :language])]
+	     [:td (get-in r [:block/properties :difficulty])] ])
+	     ]]
+	  )
+	  :query-table false
+	  }
+	  #+END_QUERY
+- ### Additional resources
 	- [Hiccup Tips](https://ericnormand.me/mini-guide/hiccup-tips)
 	- [Tutorial on Medium](https://medium.com/makimo-tech-blog/hiccup-lightning-tutorial-6494e477f3a5)
