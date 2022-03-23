@@ -183,6 +183,7 @@ difficulty:: intermediate
 			- TODO second todo
 - ### A more complete table
 	- query-table:: false
+	  ```clojure
 	  #+BEGIN_QUERY
 	  {:title [:h3 "Programming languages used in Logseq"]
 	   :query [:find (pull ?p [*])
@@ -205,6 +206,30 @@ difficulty:: intermediate
 	  :query-table false
 	  }
 	  #+END_QUERY
+	  ```
+	- The result:
+		- #+BEGIN_QUERY
+		  {:title [:h3 "Programming languages used in Logseq"]
+		   :query [:find (pull ?p [*])
+		        :where
+		        [page-tags ?p #{"programming"}]
+		         ]
+		  :view (fn [rows] [:table 
+		   [:thead 
+		    [:tr 
+		     [:th "Page"] 
+		     [:th "Language"]
+		     [:th "Difficulty"] ] ] 
+		   [:tbody 
+		  (for [r rows] [:tr 
+		     [:td [:a {:href (str "#/page/" (get r :block/name))} (clojure.string/capitalize (get r :block/name))]] 
+		     [:td (get-in r [:block/properties :language])]
+		     [:td (get-in r [:block/properties :difficulty])] ])
+		     ]]
+		  )
+		  :query-table false
+		  }
+		  #+END_QUERY
 - ### Additional resources
 	- [Hiccup Tips](https://ericnormand.me/mini-guide/hiccup-tips)
 	- [Tutorial on Medium](https://medium.com/makimo-tech-blog/hiccup-lightning-tutorial-6494e477f3a5)
