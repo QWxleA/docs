@@ -205,7 +205,8 @@ tags:: programming
                      [:td (get properties "description")]])]]])))
    }
   #+END_QUERY
--
+- Pascal
+  type:: programming_lang
 - ### Additional resources
 	- [Hiccup Tips](https://ericnormand.me/mini-guide/hiccup-tips)
 	- [Tutorial on Medium](https://medium.com/makimo-tech-blog/hiccup-lightning-tutorial-6494e477f3a5)
