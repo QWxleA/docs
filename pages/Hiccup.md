@@ -17,15 +17,7 @@
 	  }
 	  #+END_QUERY
 	  ```
-	- #+BEGIN_QUERY
-	  {:title [:h3 "This is hiccup!"]
-	   :query [:find (pull ?b [*])
-	   :where
-	      [task ?b #{"LATER"}]
-	   ]
-	  }
-	  #+END_QUERY
-	- Line 2 is written in Hiccup: `[:h3 "This is hiccup!"]`, this will be converted to: `<h3>This is hiccup!</h3>`
+		- Line 2 is written in Hiccup: `[:h3 "This is hiccup!"]`, this will be converted to: `<h3>This is hiccup!</h3>`
 	- `h3`, as used in Hiccup, is the same has an `H3` in HTML, and you can just as well use other HTML tags, like: `<p>` or `<b>`, which in Hiccup would be: `[:p "this is an HTML p tag"]` or `[:b "This is an HTML b (bold) tag"]`.
 	- For simple titles, that's (almost) all you need. If you would like to add some css divs or classes to the mix, read on:
 - ### Basic Hiccup Syntax
