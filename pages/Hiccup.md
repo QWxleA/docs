@@ -80,7 +80,7 @@ tags:: programming
   	            [:a {:href (str "#/page/" page)} (clojure.string/capitalize page)])])}
   #+END_QUERY
   ```
-- Let's examine one of the
+- Let's examine one of the [[Advanced Queries]], we are only interested in lines **11** to **13**. It is an excellent exa
 - ### Expanding seqs
 - If you include a Clojure seq in the body of an element vector:
 - ```clojure
