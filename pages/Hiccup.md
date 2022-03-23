@@ -102,9 +102,7 @@ tags:: programming
 		- Then you have the address `href="#/page/hiccup"` -> `(str "#/page/" page)`, which is Clojure for: **str** returns a string, in our case it concatenates (glues together)  `"#/page/"` and the value of `page`.
 		- Last you have the visible part of the link `Hiccup` -> `(clojure.string/capitalize page)`, which is not hard to guess, it capitalizes the value of `page`.
 		- **Note:** if you ever use this code, and `page` is a journal-page (which is a bunch of numbers), the whole thing will fail, so don't capitalize numbers, they don't like that.
-		-
 	- query-table:: false
-	  page-list:: true
 	  #+BEGIN_QUERY
 	  {:title [:b "All pages with a " [:em "programming"] " tag"]
 	   :query [:find ?name
