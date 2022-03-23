@@ -62,17 +62,19 @@ tags:: programming
 		  ```
 		- [:h2 {:style {:color "red"}} "h2 title"]
 		  [:p "Hello " [:em "World!"]]
+- ### Using Hiccup for :views
+-
 - ### Expanding seqs
 - If you include a Clojure seq in the body of an element vector:
 - ```clojure
   [:div (list "Hello" "World")]
   ```
-  This is equivalent to:
-  ```clojure
+- This is equivalent to:
+- ```clojure
   [:div "Hello" "World"]
-  ```
+  - ```
   In other words, the seq is "expanded" out into the body. This is particularly useful for macros like `for`:
-  ```clojure
+  - ```clojure
   [:ul (for [x coll] [:li x])]
   ```
 - Note that while lists are considered to be seqs by Clojure, vectors and sets are not.
