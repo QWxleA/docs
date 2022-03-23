@@ -18,6 +18,8 @@
 	  #+END_QUERY
 	  ```
 	- Line 2 is written in Hiccup: `[:h3 "This is hiccup!"]`, this will be converted to: `<h3>This is hiccup!</h3>`
+	- `h3`, usedin Hiccup, is
+	- Let's look in a bit more depth
 ### Basic Syntax
 
 Hiccup turns Clojure data structures like this:
