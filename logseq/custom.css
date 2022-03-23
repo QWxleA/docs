@@ -1,3 +1,7 @@
 .custom-query.mt-4 {
   background-color: pink !important;
+  .flex.flex-row.align-items.mt-2" {
+    display: none;
+  }
 }
+
