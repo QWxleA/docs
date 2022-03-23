@@ -182,32 +182,30 @@ tags:: programming
 	- ### A more complete table
 - query-table:: false
   #+BEGIN_QUERY
-  {:title [:h2 "Programming languages list"]
-   :query [:find (pull ?b [*])
-           :where
-           [property ?b :type "programming_lang"]
-           ;[?b :block/properties ?p]
-           ;[(get ?p "type") ?t]
-           ;[(= "programming_lang" ?t)]
-  ]
-   :view (fn [result]
-           (when (seq result)
-             (let [blocks (flatten result)]
-               [:div.table-wrapper
-                [:table.table-auto
-                 [:thead
-                  [:tr
-                   [:th {:width "20%"} "Name"]
-                   [:th {:width "20%"} "Creator"]
-                   [:th {:width "60%"} "Description"]]]
-                 [:tbody
-                  (for [{:block/keys [title properties]} blocks]
-                    [:tr
-                     [:td (second (:url (second (first title))))]
-                     [:td (get properties "creator")]
-                     [:td (get properties "description")]])]]])))
-   }
-    :query-table false
+  {
+   :query [:find (pull ?b [{:block/page
+       [:block/name :block/journal-day]} :block/properties])
+        :where
+        [property ?b :type "programming_lang"]
+        [(get ?bprops :distanse "nil") ?bs]
+        [(not= ?bs "nil")]]
+  :result-transform (fn [result]
+                       (sort-by (fn [s]
+                          (get-in s [:block/page :block/journal-day])) (fn [a b] (compare b a)) result)) 
+  :view (fn [rows] [:table 
+   [:thead 
+    [:tr 
+     [:th "Dato"] 
+     [:th "Distanse"]
+     [:th "Økt"] ] ] 
+   [:tbody 
+  (for [r rows] [:tr 
+     [:td (get-in r [:block/page :block/name])] 
+     [:td (get-in r [:block/properties :distanse])]
+     [:td (get-in r [:block/properties :økt])] ])
+     ]]
+  )
+  }
   #+END_QUERY
 - Pascal
   type:: programming_lang
