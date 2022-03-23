@@ -6,7 +6,9 @@
 	    [:p "Hello " [:em "World!"]]
 - Logseq uses Hiccup to generate HTML from clojurescript and datomic, the languages Logseq and logseq queries are written in. For every day use you need very little knowledge of Hiccup, but some elements are bot h simple and useful.
 - ## Absolute simplest use of Hiccup
--
+	- The very first thing you can use Hiccup for is to style **query-titles**
+	- ```clojure
+	  ```
 ### Basic Syntax
 
 Hiccup turns Clojure data structures like this:
