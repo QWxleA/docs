@@ -209,7 +209,7 @@ difficulty:: intermediate
      [:th "Difficulty"] ] ] 
    [:tbody 
   (for [r rows] [:tr 
-     [:td  r] 
+     [:td (get r :block/name) ] 
      [:td (get-in r [:block/properties :language])]
      [:td (get-in r [:block/properties :difficulty])] ])
      ]]
