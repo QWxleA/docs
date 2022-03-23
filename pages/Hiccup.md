@@ -46,19 +46,15 @@
 - ```clojure
   [:div {:id "email" :class "selected starred"} "..."]
   ```
-  You can write:
+-You can write:
   
-  ```clojure
+- ```clojure
   [:div#email.selected.starred "..."]
   ```
-  
-  As in CSS, the word after the "#" denotes the element's ID, and the word after each "." denotes the element's classes.
-  
-  There may be multiple classes, but there can only be one ID. Additionally, the ID must always come first, so `div#foo.bar` would work, but `div.foo#bar` would not.
-  
-  You can add an ID on its own, or a class on its own:
-  
-  ```clojure
+- As in CSS, the word after the "#" denotes the element's ID, and the word after each "." denotes the element's classes.
+- There may be multiple classes, but there can only be one ID. Additionally, the ID must always come first, so `div#foo.bar` would work, but `div.foo#bar` would not.
+- You can add an ID on its own, or a class on its own:
+- ```clojure
   [:div#post "..."]
   [:div.comment "..."]
   ```
