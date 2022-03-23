@@ -196,14 +196,14 @@ tags:: programming
   :view (fn [rows] [:table 
    [:thead 
     [:tr 
-     [:th "Dato"] 
-     [:th "Distanse"]
-     [:th "Økt"] ] ] 
+     [:th "Language"] 
+     [:th "Creator"]
+     [:th "Description"] ] ] 
    [:tbody 
   (for [r rows] [:tr 
      [:td (get-in r [:block/page :block/name])] 
-     [:td (get-in r [:block/properties :distanse])]
-     [:td (get-in r [:block/properties :økt])] ])
+     [:td (get-in r [:block/properties :creator])]
+     [:td (get-in r [:block/properties :description])] ])
      ]]
   )
   }
