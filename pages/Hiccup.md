@@ -99,7 +99,7 @@ tags:: programming
 		- `<a href="#/page/hiccup">Hiccup</a>`
 	- And if you look carefully, they are very much alike!
 		- The whole thing is wrapped in an `<a>` -> `[:a .... ]`
-		-
+		- Then you have the address `href="#/page/hiccup"` -> `(str "#/page/" page)`, which is Clojure for
 		-
 	- query-table:: false
 	  page-list:: true
