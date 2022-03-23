@@ -174,3 +174,5 @@ difficulty:: intermediate
 - ### Additional resources
 	- [Hiccup Tips](https://ericnormand.me/mini-guide/hiccup-tips)
 	- [Tutorial on Medium](https://medium.com/makimo-tech-blog/hiccup-lightning-tutorial-6494e477f3a5)
+	- [rkn.io - Clojure Cookbook: Templating with Hiccup](https://web.archive.org/web/20161212035126/http://www.rkn.io/2014/03/13/clojure-cookbook-hiccup/)
+	- [Hiccup Tips](https://ericnormand.me/mini-guide/hiccup-tips)
