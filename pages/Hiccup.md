@@ -67,14 +67,9 @@ tags:: programming
 - #+BEGIN_QUERY
   {:title "All pages have a *programming* tag"
    :query [:find ?name
-         :in $ ?tag
          :where
           [page-tags ?name #{"programming"}]
-         ;[?t :block/name ?tag]
-         ;[?p :block/tags ?t]
-         ;[?p :block/name ?name]
          ]
-   :inputs ["programming"]
    :view (fn [result]
          [:div.flex.flex-col
           (for [page result]
