@@ -189,6 +189,20 @@ tags:: programming
         ;[(get ?bprops :distanse "nil") ?bs]
         ;[(not= ?bs "nil")]
          ]
+  :view (fn [result] (for [r result] [:pre (pr-str r)]))
+  }
+  #+END_QUERY
+
+
+- query-table:: false
+  #+BEGIN_QUERY
+  {
+   :query [:find (pull ?p [*])
+        :where
+        [page-tags ?p #{"programming"}]
+        ;[(get ?bprops :distanse "nil") ?bs]
+        ;[(not= ?bs "nil")]
+         ]
   :result-transform (fn [result]
                        (sort-by (fn [s]
                           (get-in s [:block/page :block/journal-day])) (fn [a b] (compare b a)) result)) 
