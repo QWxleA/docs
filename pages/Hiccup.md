@@ -58,12 +58,11 @@ tags:: programming
 	  [:div#post "..."]
 	  [:div.comment "..."]
 	  ```
-	- The crazy thing is, you can actually do this straight inside Logseq:
-    - [:h2 {:style {:color "red"}} "h2 title"]
-	  [:p "Hello " [:em "World!"]]
-    - is just:
+	- The most amazing thing is, you can actually do this _straight inside Logseq_:
+		- [:h2 {:style {:color "red"}} "h2 title"]
+		  	  [:p "Hello " [:em "World!"]]
 	- ```clojure
-		[:h2 {:style {:color "red"}} "h2 title"]
+	  [:h2 {:style {:color "red"}} "h2 title"]
 	  [:p "Hello " [:em "World!"]]
 	  ```
 - ### Expanding seqs
