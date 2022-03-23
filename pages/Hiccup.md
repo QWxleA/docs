@@ -95,7 +95,7 @@ tags:: programming
 	- **Line12:** is interesting _clojure_, it loops over _result_, and every single value is stored in _page_
 	- **Line 13:** is the most complex Hiccup line so far:
 		- `[:a {:href (str "#/page/" page)} (clojure.string/capitalize page)]`
-	- On the outside you have a link: `[:a {first item} (second item) ]`, with two items inside
+	- On the outside you have a link: `[:a {first item} (second item) ]`, with two items inside, a list of attributes
 	- query-table:: false
 	  page-list:: true
 	  #+BEGIN_QUERY
