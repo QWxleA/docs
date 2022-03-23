@@ -200,7 +200,7 @@ tags:: programming
      [:th "Description"] ] ] 
    [:tbody 
   (for [r rows] [:tr 
-     [:td (get-in r [:block/page :block/name])] 
+     [:td (get-in r [:block/content])] 
      [:td (get-in r [:block/properties :creator])]
      [:td (get-in r [:block/properties :description])] ])
      ]]
