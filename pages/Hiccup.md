@@ -64,21 +64,6 @@ tags:: programming
 		  [:p "Hello " [:em "World!"]]
 - ### Using Hiccup for :views
 	- [[Advanced Queries]] support custom-build views for search results. These views are a combination of (a small sub-set of) Clojure and Hiccup. It's not the easiest combination, but without a doubt you can build amazing things with it.
-	-
-- ### Expanding seqs
-- If you include a Clojure seq in the body of an element vector:
-- ```clojure
-  [:div (list "Hello" "World")]
-  ```
-- This is equivalent to:
-- ```clojure
-  [:div "Hello" "World"]
-  - ```
-  In other words, the seq is "expanded" out into the body. This is particularly useful for macros like `for`:
-  - ```clojure
-  [:ul (for [x coll] [:li x])]
-  ```
-- Note that while lists are considered to be seqs by Clojure, vectors and sets are not.
 - #+BEGIN_QUERY
   {:title "All pages have a *programming* tag"
    :query [:find ?name
@@ -93,6 +78,20 @@ tags:: programming
           (for [page result]
             [:a {:href (str "#/page/" page)} (clojure.string/capitalize page)])])}
   #+END_QUERY
+- ### Expanding seqs
+- If you include a Clojure seq in the body of an element vector:
+- ```clojure
+  [:div (list "Hello" "World")]
+  ```
+- This is equivalent to:
+- ```clojure
+  [:div "Hello" "World"]
+  - ```
+  In other words, the seq is "expanded" out into the body. This is particularly useful for macros like `for`:
+  - ```clojure
+  [:ul (for [x coll] [:li x])]
+  ```
+- Note that while lists are considered to be seqs by Clojure, vectors and sets are not.
 - ### Additioanl resources
 	- [Hiccup Tips](https://ericnormand.me/mini-guide/hiccup-tips)
 	- [Tutorial on Medium](https://medium.com/makimo-tech-blog/hiccup-lightning-tutorial-6494e477f3a5)
