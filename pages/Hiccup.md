@@ -64,44 +64,44 @@ tags:: programming
 		  [:p "Hello " [:em "World!"]]
 - ### Using Hiccup for :views
 	- [[Advanced Queries]] support custom-build views for search results. These views are a combination of (a small sub-set of) Clojure and Hiccup. It's not the easiest combination, but without a doubt you can build amazing things with it.
-- ``` clojure
-  #+BEGIN_QUERY
-  {:title [:h2 "All pages with a <b>programming</b> tag"]
-   :query [:find ?name
-   :in $ ?tag
-   :where
-    [?t :block/name ?tag]
-    [?p :block/tags ?t]
-    [?p :block/name ?name]]
-   :inputs ["programming"]
-   :view (fn [result]
-  	         [:div.flex.flex-col
-  	          (for [page result]
-  	            [:a {:href (str "#/page/" page)} (clojure.string/capitalize page)]
-                  )
-                ]
-           )}
-  #+END_QUERY
-  ```
-- Let's examine one of the [[Advanced Queries]], we are only interested in lines **11** to **15**. It is an excellent example how search results, clojure and hiccup can represent search results:
-- **Line 11:**
-- #+BEGIN_QUERY
-  {:title [:h2 "All pages with a <b>programming</b> tag"]
-   :query [:find ?name
-   :in $ ?tag
-   :where
-    [?t :block/name ?tag]
-    [?p :block/tags ?t]
-    [?p :block/name ?name]]
-   :inputs ["programming"]
-   :view (fn [result]
-  	         [:div.flex.flex-col
-  	          (for [page result]
-  	            [:a {:href (str "#/page/" page)} (clojure.string/capitalize page)]
-                  )
-                ]
-           )}
-  #+END_QUERY
+	- ``` clojure
+	  #+BEGIN_QUERY
+	  {:title [:h2 "All pages with a [:b programming] tag"]
+	   :query [:find ?name
+	   :in $ ?tag
+	   :where
+	    [?t :block/name ?tag]
+	    [?p :block/tags ?t]
+	    [?p :block/name ?name]]
+	   :inputs ["programming"]
+	   :view (fn [result]
+	  	         [:div.flex.flex-col
+	  	          (for [page result]
+	  	            [:a {:href (str "#/page/" page)} (clojure.string/capitalize page)]
+	                  )
+	                ]
+	           )}
+	  #+END_QUERY
+	  ```
+	- Let's examine one of the [[Advanced Queries]], we are only interested in lines **11** to **15**. It is an excellent example how search results, clojure and hiccup can represent search results:
+	- **Line 11:**
+	- #+BEGIN_QUERY
+	  {:title [:h2 "All pages with a [:b programming] tag"]
+	   :query [:find ?name
+	   :in $ ?tag
+	   :where
+	    [?t :block/name ?tag]
+	    [?p :block/tags ?t]
+	    [?p :block/name ?name]]
+	   :inputs ["programming"]
+	   :view (fn [result]
+	  	         [:div.flex.flex-col
+	  	          (for [page result]
+	  	            [:a {:href (str "#/page/" page)} (clojure.string/capitalize page)]
+	                  )
+	                ]
+	           )}
+	  #+END_QUERY
 - ### Expanding seqs
 - If you include a Clojure seq in the body of an element vector:
 - ```clojure
