@@ -86,6 +86,7 @@ tags:: programming
 	- Let's examine one of the [[Advanced Queries]], we are only interested in lines **11** to **15**. It is an excellent example how search results, clojure and hiccup can represent search results:
 	- **Line 11:**
 	- query-table:: false
+	  page-list:: true
 	  #+BEGIN_QUERY
 	  {:title [:b "All pages with a " [:em "programming"] " tag"]
 	   :query [:find ?name
