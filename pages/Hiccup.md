@@ -63,26 +63,19 @@ tags:: programming
 		- [:h2 {:style {:color "red"}} "h2 title"]
 		  [:p "Hello " [:em "World!"]]
 - ### Expanding seqs
-  
-  If you include a Clojure seq in the body of an element vector:
-  
-  ```clojure
+- If you include a Clojure seq in the body of an element vector:
+- ```clojure
   [:div (list "Hello" "World")]
   ```
-  
   This is equivalent to:
-  
   ```clojure
   [:div "Hello" "World"]
   ```
-  
   In other words, the seq is "expanded" out into the body. This is particularly useful for macros like `for`:
-  
   ```clojure
   [:ul (for [x coll] [:li x])]
   ```
-  
-  Note that while lists are considered to be seqs by Clojure, vectors and sets are not.
+- Note that while lists are considered to be seqs by Clojure, vectors and sets are not.
 - #+BEGIN_QUERY
   {:title "All pages have a *programming* tag"
    :query [:find ?name
