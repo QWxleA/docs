@@ -26,8 +26,7 @@ tags:: programming
 		- ```html
 		  <h3>This is hiccup!</h3>
 		  ```
-	- Technically speaking, the Clojure data structure is a vector (`[ .... ]`, just like [[Advanced Queries]] uses for
-	   searches) that takes one of the following forms:
+	- Technically speaking, the Clojure data structure is a vector (`[ .... ]`, just like [[Advanced Queries]] uses for searches, that takes one of the following two forms:
 	- ```clojure
 	  [tag & body]
 	  [tag attributes & body]
@@ -38,7 +37,7 @@ tags:: programming
 	- ```clojure
 	  [:p "Hello " [:em "World!"]]
 	  ```
-	- This definition might sound a bit obvious, but later you'll see how you can use the same syntax to create more complicated HTML structures, like lists (`<ul><li>...`) or tables (`<tr><th>...`).
+	- This definition might sound a bit obvious, or unimportant, but later you'll see how you can use the same syntax to create more complicated HTML structures, like lists (`<ul><li>...`) or tables (`<tr><th>...`).
 - ## Making it look nice with CSS
 	- There are two ways to add **ids** and **classes** to your html elements. The first is the most straight forward, and easy to read, but a bit long:
 	- ```clojure
