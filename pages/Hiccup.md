@@ -42,7 +42,7 @@
 	  [:p "Hello " [:em "World!"]]
 	  ```
 - ### Making it look nice with CSS
-	- There are two ways to add `id`s``
+	- There are two ways to add **ids** and **classes** to your html elements. The first is the most straight forward, and easy to read, but a bit long:
 	- Hiccup provides a convenient shortcut for adding `id` and `class` attributes to an element. Instead of writing:
 	- ```clojure
 	  [:div {:id "email" :class "selected starred"} "..."]
