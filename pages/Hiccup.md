@@ -4,7 +4,9 @@
 - Example:
 	- [:h2 {:style {:color "red"}} "h2 title"]
 	    [:p "Hello " [:em "World!"]]
-- Logseq uses Hiccup to generate HTML from clojurescript and datomic, the languages Logseq and logseq queries are written in.
+- Logseq uses Hiccup to generate HTML from clojurescript and datomic, the languages Logseq and logseq queries are written in. For every day use you need very little knowledge of Hiccup, but some elements are bot h simple and useful.
+- ## Absolute simplest use of Hiccup
+-
 ### Basic Syntax
 
 Hiccup turns Clojure data structures like this:
