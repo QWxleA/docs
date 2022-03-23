@@ -123,65 +123,6 @@ difficulty:: intermediate
 		           )}
 		  #+END_QUERY
 - ### Table views
-	- A regular table is a great way to show data, this is how it's done in hiccup:
-	- **Query to create a table with page and todo count**
-	  link:: [Discord](https://discord.com/channels/725182569297215569/743139225746145311/921337299164356658)
-	  date:: [[2021-12-17]]
-		- query-table:: false
-		  ```clojure
-		  #+BEGIN_QUERY 
-		  {:title "TODO by page"
-		    :query     [:find (pull ?b [:block/marker :block/parent {:block/page
-		       [:db/id :block/name]}])
-		    :where
-		             [?b :block/marker ?marker]
-		             [(= "TODO" ?marker)] 
-		    ]
-		  :result-transform (fn [result]
-		                          (map (fn [[key value]] {:page (get key :block/name) :count (count value)}) (group-by :block/page result))
-		                  )
-		  :view (fn [rows] [:table 
-		   [:thead 
-		    [:tr 
-		     [:th "Page"] 
-		     [:th "Count"] ] ] 
-		   [:tbody 
-		  (for [r rows] [:tr 
-		     [:td [:a {:href (str "#/page/" (get r :page))} (get r :page)] ] 
-		     [:td (get r :count)] ])
-		     ]]
-		  )
-		  }
-		  #+END_QUERY
-		  ```
-		- #+BEGIN_QUERY 
-		  {:title "TODO by page"
-		    :query     [:find (pull ?b [:block/marker :block/parent {:block/page
-		       [:db/id :block/name]}])
-		    :where
-		             [?b :block/marker ?marker]
-		             [(= "TODO" ?marker)] 
-		    ]
-		  :result-transform (fn [result]
-		                          (map (fn [[key value]] {:page (get key :block/name) :count (count value)}) (group-by :block/page result))
-		                  )
-		  :view (fn [rows] [:table 
-		   [:thead 
-		    [:tr 
-		     [:th "Page"] 
-		     [:th "Count"] ] ] 
-		   [:tbody 
-		  (for [r rows] [:tr 
-		     [:td [:a {:href (str "#/page/" (get r :page))} (get r :page)] ] 
-		     [:td (get r :count)] ])
-		     ]]
-		  )
-		  }
-		  #+END_QUERY
-		- #### This is the data used in the previous query:
-			- TODO first todo
-			- TODO second todo
-- ### A more complete table
 	- query-table:: false
 	  ```clojure
 	  #+BEGIN_QUERY
@@ -207,29 +148,29 @@ difficulty:: intermediate
 	  }
 	  #+END_QUERY
 	  ```
-	- The result:
-		- #+BEGIN_QUERY
-		  {:title [:h3 "Programming languages used in Logseq"]
-		   :query [:find (pull ?p [*])
-		        :where
-		        [page-tags ?p #{"programming"}]
-		         ]
-		  :view (fn [rows] [:table 
-		   [:thead 
-		    [:tr 
-		     [:th "Page"] 
-		     [:th "Language"]
-		     [:th "Difficulty"] ] ] 
-		   [:tbody 
-		  (for [r rows] [:tr 
-		     [:td [:a {:href (str "#/page/" (get r :block/name))} (clojure.string/capitalize (get r :block/name))]] 
-		     [:td (get-in r [:block/properties :language])]
-		     [:td (get-in r [:block/properties :difficulty])] ])
-		     ]]
-		  )
-		  :query-table false
-		  }
-		  #+END_QUERY
+		- The result:
+			- #+BEGIN_QUERY
+			  {:title [:h3 "Programming languages used in Logseq"]
+			   :query [:find (pull ?p [*])
+			        :where
+			        [page-tags ?p #{"programming"}]
+			         ]
+			  :view (fn [rows] [:table 
+			   [:thead 
+			    [:tr 
+			     [:th "Page"] 
+			     [:th "Language"]
+			     [:th "Difficulty"] ] ] 
+			   [:tbody 
+			  (for [r rows] [:tr 
+			     [:td [:a {:href (str "#/page/" (get r :block/name))} (clojure.string/capitalize (get r :block/name))]] 
+			     [:td (get-in r [:block/properties :language])]
+			     [:td (get-in r [:block/properties :difficulty])] ])
+			     ]]
+			  )
+			  :query-table false
+			  }
+			  #+END_QUERY
 - ### Additional resources
 	- [Hiccup Tips](https://ericnormand.me/mini-guide/hiccup-tips)
 	- [Tutorial on Medium](https://medium.com/makimo-tech-blog/hiccup-lightning-tutorial-6494e477f3a5)
