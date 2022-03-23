@@ -84,8 +84,14 @@ tags:: programming
 	  #+END_QUERY
 	  ```
 	- Let's examine one of the [[Advanced Queries]], we are only interested in lines **11** to **15**. It is an excellent example how search results, clojure and hiccup can represent search results:
-	- These lines will crea
-	- **Line 11:**
+	- These lines will create the following:
+	- ```html
+	  <div class="flex flex-col">
+	  <a href="#/page/advanced queries">Advanced queries</a>
+	  <a href="#/page/hiccup">Hiccup</a>
+	  </div>
+	  ```
+	- **Line 11 (query):** creates
 	- query-table:: false
 	  page-list:: true
 	  #+BEGIN_QUERY
