@@ -18,7 +18,7 @@
 	  #+END_QUERY
 	  ```
 	- Line 2 is written in Hiccup: `[:h3 "This is hiccup!"]`, this will be converted to: `<h3>This is hiccup!</h3>`
-	- `h3`, usedin Hiccup, is
+	- `h3`, as used in Hiccup, is the same has an `H3` in HTML, and you can just as well use other HTML tags, like: ``
 	- Let's look in a bit more depth
 ### Basic Syntax
 
