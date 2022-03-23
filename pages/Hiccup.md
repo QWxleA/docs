@@ -18,7 +18,8 @@
 	  #+END_QUERY
 	  ```
 	- Line 2 is written in Hiccup: `[:h3 "This is hiccup!"]`, this will be converted to: `<h3>This is hiccup!</h3>`
-	- `h3`, as used in Hiccup, is the same has an `H3` in HTML, and you can just as well use other HTML tags, like: `<p>` or `<b>`, which in Hiccup would be: `[:p ""]`
+	- `h3`, as used in Hiccup, is the same has an `H3` in HTML, and you can just as well use other HTML tags, like: `<p>` or `<b>`, which in Hiccup would be: `[:p "this is an HTML p tag"]` or `[:b "This is an HTML b (bold) tag"]`.
+	- For simple titles, that's (almost)
 	- Let's look in a bit more depth
 ### Basic Syntax
 
