@@ -17,7 +17,7 @@ tags:: programming
 		- Line 2 is written in Hiccup: `[:h3 "This is hiccup!"]`, this will be converted to: `<h3>This is hiccup!</h3>`
 	- `h3`, as used in Hiccup, is the same has an `H3` in HTML, and you can also use other HTML tags, for example: `<p>` or `<b>`, which in Hiccup would be: `[:p "this is an HTML p tag"]` or `[:b "This is an HTML b (bold) tag"]`.
 	- For simple titles, that's (almost) all you need. If you would like to add some css divs or classes to the mix, read on:
-- ### Basic Hiccup Syntax
+- ## Basic Hiccup Syntax
 	- What is _actually_ happening when you write your title? Hiccup turns Clojure data structures like this:
 		- ```clojure
 		  [:h3 "This is hiccup!"]
@@ -39,7 +39,7 @@ tags:: programming
 	  [:p "Hello " [:em "World!"]]
 	  ```
 	- This definition might sound a bit obvious, but later you'll see how you can use the same syntax to create more complicated HTML structures, like lists (`<ul><li>...`) or tables (`<tr><th>...`).
-- ### Making it look nice with CSS
+- ## Making it look nice with CSS
 	- There are two ways to add **ids** and **classes** to your html elements. The first is the most straight forward, and easy to read, but a bit long:
 	- ```clojure
 	  [:h3 {:id "mysearch" :class "underlined superpink"} "This is better looking Hiccup!"]
@@ -127,6 +127,7 @@ tags:: programming
 		  link:: [Discord](https://discord.com/channels/725182569297215569/743139225746145311/921337299164356658)
 		  date:: [[2021-12-17]]
 			- query-table:: false
+			  ```clojure
 			  #+BEGIN_QUERY 
 			  {:title "TODO by page"
 			    :query     [:find (pull ?b [:block/marker :block/parent {:block/page
@@ -151,6 +152,7 @@ tags:: programming
 			  )
 			  }
 			  #+END_QUERY
+			  ```
 			- #+BEGIN_QUERY 
 			  {:title "TODO by page"
 			    :query     [:find (pull ?b [:block/marker :block/parent {:block/page
