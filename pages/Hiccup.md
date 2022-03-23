@@ -21,7 +21,7 @@
 	- `h3`, as used in Hiccup, is the same has an `H3` in HTML, and you can just as well use other HTML tags, like: `<p>` or `<b>`, which in Hiccup would be: `[:p "this is an HTML p tag"]` or `[:b "This is an HTML b (bold) tag"]`.
 	- For simple titles, that's (almost) all you need. If you would like to add some css divs or classes to the mix, read on:
 - ### Basic Hiccup Syntax
-	- Hiccup turns Clojure data structures like this:
+	- What is actually happening when you write a title over your query? Hiccup turns Clojure data structures like this:
 	  
 	  ```clojure
 	  [:a {:href "http://github.com"} "GitHub"]
