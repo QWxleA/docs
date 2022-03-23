@@ -69,10 +69,11 @@ tags:: programming
    :query [:find ?name
          :in $ ?tag
          :where
-         [page-property ?p :foo "bar"]
-         [?t :block/name ?tag]
-         [?p :block/tags ?t]
-         [?p :block/name ?name]]
+         [page-tags ?p ?tag]
+         ;[?t :block/name ?tag]
+         ;[?p :block/tags ?t]
+         ;[?p :block/name ?name]
+  ]
    :inputs ["programming"]
    :view (fn [result]
          [:div.flex.flex-col
