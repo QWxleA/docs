@@ -69,9 +69,10 @@ tags:: programming
    :query [:find ?name
          :in $ ?tag
          :where
-         [?t :block/name ?tag]
-         [?p :block/tags ?t]
-         [?p :block/name ?name]
+          [page-tags ?name #{"programming"}]
+         ;[?t :block/name ?tag]
+         ;[?p :block/tags ?t]
+         ;[?p :block/name ?name]
          ]
    :inputs ["programming"]
    :view (fn [result]
