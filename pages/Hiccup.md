@@ -209,26 +209,13 @@ difficulty:: intermediate
      [:th "Difficulty"] ] ] 
    [:tbody 
   (for [r rows] [:tr 
-     [:td (get-in r [:block/page :block/name])] 
+     [:td t ] 
      [:td (get-in r [:block/properties :language])]
      [:td (get-in r [:block/properties :difficulty])] ])
      ]]
   )
   }
   #+END_QUERY
-- Pascal
-  type:: programming_lang
-  creator:: me
-  description:: none
-- Clojure
-  type:: programming_lang
-  creator:: me
-  description:: none
-- HTML
-  type:: programming_lang
-  creator:: me
-  description:: none
--
-- ### Additional resources
+-- ### Additional resources
 	- [Hiccup Tips](https://ericnormand.me/mini-guide/hiccup-tips)
 	- [Tutorial on Medium](https://medium.com/makimo-tech-blog/hiccup-lightning-tutorial-6494e477f3a5)
