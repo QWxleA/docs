@@ -21,16 +21,15 @@
 	- `h3`, as used in Hiccup, is the same has an `H3` in HTML, and you can also use other HTML tags, for example: `<p>` or `<b>`, which in Hiccup would be: `[:p "this is an HTML p tag"]` or `[:b "This is an HTML b (bold) tag"]`.
 	- For simple titles, that's (almost) all you need. If you would like to add some css divs or classes to the mix, read on:
 - ### Basic Hiccup Syntax
-	- What is actually happening when you write your title? Hiccup turns Clojure data structures like this:
-	- ```clojure
-	- [:h3 "This is hiccup!"]
-	  ```
+	- What is _actually_ happening when you write your title? Hiccup turns Clojure data structures like this:
+		- ```clojure
+		  [:h3 "This is hiccup!"]
+		  ```
 	- Into strings of HTML like this:
-	- ```html
-	  <h3>This is hiccup!</h3>
-	  ```
-	- Using the [hiccup.core/html][1] macro.
-	- The Clojure data structure is a vector that takes one of the following forms:
+		- ```html
+		  <h3>This is hiccup!</h3>
+		  ```
+	- Technically speaking, the Clojure data structure is a vector that takes one of the following forms:
 	- ```clojure
 	  [tag & body]
 	  [tag attributes & body]
