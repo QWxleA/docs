@@ -43,13 +43,12 @@
 	  ```
 - ### Making it look nice with CSS
 	- There are two ways to add **ids** and **classes** to your html elements. The first is the most straight forward, and easy to read, but a bit long:
-	- Hiccup provides a convenient shortcut for adding `id` and `class` attributes to an element. Instead of writing:
 	- ```clojure
-	  [:div {:id "email" :class "selected starred"} "..."]
+	  [:h3 {:id "mysearch" :class "underlined superpink"} "This is better looking Hiccup!"]
 	  ```
-	  -You can write:
+	- Hiccup also provides a convenient shorter way of writing:
 	- ```clojure
-	  [:div#email.selected.starred "..."]
+	  [:h3#mysearch.underlined.superpink "This is better looking Hiccup!"]
 	  ```
 	- As in CSS, the word after the "#" denotes the element's ID, and the word after each "." denotes the element's classes.
 	- There may be multiple classes, but there can only be one ID. Additionally, the ID must always come first, so `div#foo.bar` would work, but `div.foo#bar` would not.
@@ -58,24 +57,40 @@
 	  [:div#post "..."]
 	  [:div.comment "..."]
 	  ```
-### Expanding seqs
-
-If you include a Clojure seq in the body of an element vector:
-
-```clojure
-[:div (list "Hello" "World")]
-```
-
-This is equivalent to:
-
-```clojure
-[:div "Hello" "World"]
-```
-
-In other words, the seq is "expanded" out into the body. This is particularly useful for macros like `for`:
-
-```clojure
-[:ul (for [x coll] [:li x])]
-```
-
-Note that while lists are considered to be seqs by Clojure, vectors and sets are not.
+- ### Expanding seqs
+  
+  If you include a Clojure seq in the body of an element vector:
+  
+  ```clojure
+  [:div (list "Hello" "World")]
+  ```
+  
+  This is equivalent to:
+  
+  ```clojure
+  [:div "Hello" "World"]
+  ```
+  
+  In other words, the seq is "expanded" out into the body. This is particularly useful for macros like `for`:
+  
+  ```clojure
+  [:ul (for [x coll] [:li x])]
+  ```
+  
+  Note that while lists are considered to be seqs by Clojure, vectors and sets are not.
+- #+BEGIN_QUERY
+  {:title "All pages have a *programming* tag"
+   :query [:find ?name
+         :in $ ?tag
+         :where
+         [?t :block/name ?tag]
+         [?p :block/tags ?t]
+         [?p :block/name ?name]]
+   :inputs ["programming"]
+   :view (fn [result]
+         [:div.flex.flex-col
+          (for [page result]
+            [:a {:href (str "#/page/" page)} (clojure.string/capitalize page)])])}
+  #+END_QUERY
+- ### Additioanl resources
+	- [Hiccup Tips](https://ericnormand.me/mini-guide/hiccup-tips)
