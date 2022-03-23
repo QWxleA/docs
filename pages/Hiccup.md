@@ -29,7 +29,7 @@
 		- ```html
 		  <h3>This is hiccup!</h3>
 		  ```
-	- Technically speaking, the Clojure data structure is a vector that takes one of the following forms:
+	- Technically speaking, the Clojure data structure is a vector `[ .... ]` that takes one of the following forms:
 	- ```clojure
 	  [tag & body]
 	  [tag attributes & body]
@@ -40,7 +40,6 @@
 	- ```clojure
 	  [:p "Hello " [:em "World!"]]
 	  ```
-	- [1]: http://weavejester.github.com/hiccup/hiccup.core.html#var-html
 - ### CSS-style sugar
 - Hiccup provides a convenient shortcut for adding `id` and `class` attributes to an element. Instead of writing:
 - ```clojure
