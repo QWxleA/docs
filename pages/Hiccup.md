@@ -24,13 +24,13 @@
 	- What is actually happening when you write a title over your query? Hiccup turns Clojure data structures like this:
 	  
 	  ```clojure
-	  [:a {:href "http://github.com"} "GitHub"]
+	  [:h3 "This is hiccup!"]
 	  ```
 	  
 	  Into strings of HTML like this:
 	  
 	  ```html
-	  <a href="http://github.com">GitHub</a>
+	  <h3>This is hiccup!</h3>
 	  ```
 	  
 	  Using the [hiccup.core/html][1] macro.
@@ -53,30 +53,27 @@
 	  ```
 	  
 	  [1]: http://weavejester.github.com/hiccup/hiccup.core.html#var-html
-### CSS-style sugar
-
-Hiccup provides a convenient shortcut for adding `id` and `class` attributes to an element. Instead of writing:
-
-```clojure
-[:div {:id "email" :class "selected starred"} "..."]
-```
-
-You can write:
-
-```clojure
-[:div#email.selected.starred "..."]
-```
-
-As in CSS, the word after the "#" denotes the element's ID, and the word after each "." denotes the element's classes.
-
-There may be multiple classes, but there can only be one ID. Additionally, the ID must always come first, so `div#foo.bar` would work, but `div.foo#bar` would not.
-
-You can add an ID on its own, or a class on its own:
-
-```clojure
-[:div#post "..."]
-[:div.comment "..."]
-```
+- ### CSS-style sugar
+- Hiccup provides a convenient shortcut for adding `id` and `class` attributes to an element. Instead of writing:
+- ```clojure
+  [:div {:id "email" :class "selected starred"} "..."]
+  ```
+  You can write:
+  
+  ```clojure
+  [:div#email.selected.starred "..."]
+  ```
+  
+  As in CSS, the word after the "#" denotes the element's ID, and the word after each "." denotes the element's classes.
+  
+  There may be multiple classes, but there can only be one ID. Additionally, the ID must always come first, so `div#foo.bar` would work, but `div.foo#bar` would not.
+  
+  You can add an ID on its own, or a class on its own:
+  
+  ```clojure
+  [:div#post "..."]
+  [:div.comment "..."]
+  ```
 ### Expanding seqs
 
 If you include a Clojure seq in the body of an element vector:
