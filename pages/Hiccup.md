@@ -1,7 +1,7 @@
 tags:: programming
 
-- Hiccup is a [[domain-specific language]] for generating HTML used mostly in Clojure community.
-- Logseq uses Hiccup to generate HTML from [[clojurescript]] and [[datomic]], the languages Logseq and logseq queries are written in. For every day use you need very little knowledge of Hiccup, but some elements are bot h simple and useful.
+- Hiccup is a [[domain-specific language]] for generating HTML, used mostly in Clojure community.
+- For every day use you need very little knowledge of Hiccup, but some elements are bot h simple and useful.
 - ## Let's Hiccup
 	- The most obvious thing you can use Hiccup for is to style the titles of [[Advanced Queries]]:
 	- ```clojure
