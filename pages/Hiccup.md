@@ -180,7 +180,8 @@ tags:: programming
 			- TODO first todo
 			- TODO second todo
 	- ### A more complete table
-- #+BEGIN_QUERY
+- query-table:: false
+  #+BEGIN_QUERY
   {:title [:h2 "Programming languages list"]
    :query [:find (pull ?b [*])
            :where
@@ -200,7 +201,7 @@ tags:: programming
                    [:th {:width "20%"} "Creator"]
                    [:th {:width "60%"} "Description"]]]
                  [:tbody
-                  (for [{:block/properties [title properties]} blocks]
+                  (for [{:block/keys [title properties]} blocks]
                     [:tr
                      [:td (second (:url (second (first title))))]
                      [:td (get properties "creator")]
