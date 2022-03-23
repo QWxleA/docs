@@ -69,6 +69,7 @@ tags:: programming
    :query [:find ?name
          :in $ ?tag
          :where
+         [page-property ?p :foo "bar"]
          [?t :block/name ?tag]
          [?p :block/tags ?t]
          [?p :block/name ?name]]
