@@ -64,17 +64,22 @@ tags:: programming
 		  [:p "Hello " [:em "World!"]]
 - ### Using Hiccup for :views
 	- [[Advanced Queries]] support custom-build views for search results. These views are a combination of (a small sub-set of) Clojure and Hiccup. It's not the easiest combination, but without a doubt you can build amazing things with it.
-- #+BEGIN_QUERY
-  {:title "All pages have a *programming* tag"
-   :query [:find ?name
-         :where
-          [page-tags ?name #{"programming"}]
-         ]
-   :view (fn [result]
-         [:div.flex.flex-col
-          (for [page result]
-            [:a {:href (str "#/page/" page)} (clojure.string/capitalize page)])])}
-  #+END_QUERY
+- ``` clojure
+  	  #+BEGIN_QUERY
+  	  {:title "All pages have a *programming* tag"
+  	   :query [:find ?name
+  	         :in $ ?tag
+  	         :where
+  	         [?t :block/name ?tag]
+  	         [?p :block/tags ?t]
+  	         [?p :block/name ?name]]
+  	   :inputs ["programming"]
+  	   :view (fn [result]
+  	         [:div.flex.flex-col
+  	          (for [page result]
+  	            [:a {:href (str "#/page/" page)} (clojure.string/capitalize page)])])}
+  	  #+END_QUERY
+  	  ```
 - ### Expanding seqs
 - If you include a Clojure seq in the body of an element vector:
 - ```clojure
