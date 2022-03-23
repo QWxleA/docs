@@ -92,7 +92,8 @@ tags:: programming
 	  </div>
 	  ```
 	- **Line 11 (query):** creates the div with the two classes flex and flex-col, that div closes in **line 15** (**4** in the html)
-	- **Line12:** is the interesting one, it loops over _result_, and every single value is stored in _page_
+	- **Line12:** is interesting _clojure_, it loops over _result_, and every single value is stored in _page_
+	- **Line 13:** is the most complex Hiccup line so far:
 	- query-table:: false
 	  page-list:: true
 	  #+BEGIN_QUERY
