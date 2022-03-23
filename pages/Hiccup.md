@@ -122,7 +122,7 @@ tags:: programming
 		           )}
 		  #+END_QUERY
 - ### Table views
-	- A re
+	- A regular table is a great way to show data, this is how it's done in hiccup:
 	- **Query to create a table with page and todo count**
 	  link:: [Discord](https://discord.com/channels/725182569297215569/743139225746145311/921337299164356658)
 	  date:: [[2021-12-17]]
