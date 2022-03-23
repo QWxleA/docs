@@ -122,17 +122,7 @@ tags:: programming
 		           )}
 		  #+END_QUERY
 	- More:
-	- #+BEGIN_QUERY
-	  {:title [:b "All pages with a " [:em "programming"] " tag"]
-	   :query [:find ?name
-	   :in $ ?tag
-	   :where
-	    [?t :block/name ?tag]
-	    [?p :block/tags ?t]
-	    [?p :block/name ?name]]
-	   :inputs ["programming"]
-	   }
-	  #+END_QUERY
+	-
 - ### Expanding seqs
 - If you include a Clojure seq in the body of an element vector:
 - ```clojure
