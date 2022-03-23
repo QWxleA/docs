@@ -113,13 +113,7 @@ tags:: programming
 	    [?p :block/tags ?t]
 	    [?p :block/name ?name]]
 	   :inputs ["programming"]
-	   :view (fn [result]
-	  	         [:div.flex.flex-col
-	  	          (for [page result]
-	  	            [:a {:href (str "#/page/" page)} (clojure.string/capitalize page)]
-	                  )
-	                ]
-	           )}
+	   }
 	  #+END_QUERY
 - ### Expanding seqs
 - If you include a Clojure seq in the body of an element vector:
