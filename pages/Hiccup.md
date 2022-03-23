@@ -183,8 +183,7 @@ tags:: programming
 - query-table:: false
   #+BEGIN_QUERY
   {
-   :query [:find (pull ?b [{:block/page
-       [:block/name :block/journal-day]} :block/properties])
+   :query [:find (pull ?b [*])
         :where
         [property ?b :type "programming_lang"]
         ;[(get ?bprops :distanse "nil") ?bs]
@@ -209,6 +208,14 @@ tags:: programming
   }
   #+END_QUERY
 - Pascal
+  type:: programming_lang
+  creator:: me
+  description:: none
+- Clojure
+  type:: programming_lang
+  creator:: me
+  description:: none
+- HTML
   type:: programming_lang
   creator:: me
   description:: none
