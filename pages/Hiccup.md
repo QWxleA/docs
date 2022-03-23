@@ -206,6 +206,7 @@ tags:: programming
                      [:td (get properties "creator")]
                      [:td (get properties "description")]])]]])))
    }
+    :query-table false
   #+END_QUERY
 - Pascal
   type:: programming_lang
