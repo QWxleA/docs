@@ -1,7 +1,7 @@
 tags:: programming
 
 - Hiccup is a [[domain-specific language]] for generating HTML, used mostly in Clojure community.
-- For every day use you need very little knowledge of Hiccup, and it's actually surprisingly simple.
+- For every day use you need very little knowledge of Hiccup, and fortunately (most of it) is surprisingly simple.
 - ## Let's Hiccup
 	- The most obvious thing you can use Hiccup for is to style the titles of [[Advanced Queries]]:
 	- ```clojure
