@@ -191,7 +191,7 @@ difficulty:: intermediate
         ;[(get ?bprops :distanse "nil") ?bs]
         ;[(not= ?bs "nil")]
          ]
-  :view (fn [result] (for [r result] [:pre (pr-str (get r :block/name) r)]))
+  :view (fn [result] (for [r result] [:pre (pr-str (get-in r [:block/name) r)]))
   }
   #+END_QUERY
 - query-table:: false
@@ -200,8 +200,6 @@ difficulty:: intermediate
    :query [:find (pull ?p [*])
         :where
         [page-tags ?p #{"programming"}]
-        ;[(get ?bprops :distanse "nil") ?bs]
-        ;[(not= ?bs "nil")]
          ]
   :view (fn [rows] [:table 
    [:thead 
