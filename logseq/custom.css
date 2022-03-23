@@ -1,5 +1,5 @@
 .custom-query.mt-4 {
-  background-color: pink !important;
+  color: pink !important;
 }
 
 .custom-query.mt-4 .flex.flex-row.align-items.mt-2 {
@@ -7,3 +7,6 @@
   /* background-color: aqua !important; */
 }
 
+.simple {
+  background-color: blueviolet !important;
+}
