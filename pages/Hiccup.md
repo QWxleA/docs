@@ -41,23 +41,23 @@
 	- ```clojure
 	  [:p "Hello " [:em "World!"]]
 	  ```
-- ### CSS-style sugar
-- Hiccup provides a convenient shortcut for adding `id` and `class` attributes to an element. Instead of writing:
-- ```clojure
-  [:div {:id "email" :class "selected starred"} "..."]
-  ```
--You can write:
-  
-- ```clojure
-  [:div#email.selected.starred "..."]
-  ```
-- As in CSS, the word after the "#" denotes the element's ID, and the word after each "." denotes the element's classes.
-- There may be multiple classes, but there can only be one ID. Additionally, the ID must always come first, so `div#foo.bar` would work, but `div.foo#bar` would not.
-- You can add an ID on its own, or a class on its own:
-- ```clojure
-  [:div#post "..."]
-  [:div.comment "..."]
-  ```
+- ### Making it look nice with CSS
+	- There are two ways to add `id`s``
+	- Hiccup provides a convenient shortcut for adding `id` and `class` attributes to an element. Instead of writing:
+	- ```clojure
+	  [:div {:id "email" :class "selected starred"} "..."]
+	  ```
+	  -You can write:
+	- ```clojure
+	  [:div#email.selected.starred "..."]
+	  ```
+	- As in CSS, the word after the "#" denotes the element's ID, and the word after each "." denotes the element's classes.
+	- There may be multiple classes, but there can only be one ID. Additionally, the ID must always come first, so `div#foo.bar` would work, but `div.foo#bar` would not.
+	- You can add an ID on its own, or a class on its own:
+	- ```clojure
+	  [:div#post "..."]
+	  [:div.comment "..."]
+	  ```
 ### Expanding seqs
 
 If you include a Clojure seq in the body of an element vector:
