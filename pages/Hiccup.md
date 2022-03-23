@@ -87,7 +87,7 @@ tags:: programming
 	- **Line 11:**
 	- query-table:: false
 	  #+BEGIN_QUERY
-	  {:title [:b "All pages with a " [:em "programming"] " tag"]
+	  <span class="simple">{:title [:b "All pages with a " [:em "programming"] " tag"]
 	   :query [:find ?name
 	   :in $ ?tag
 	   :where
@@ -101,7 +101,7 @@ tags:: programming
 	  	            [:a {:href (str "#/page/" page)} (clojure.string/capitalize page)]
 	                  )
 	                ]
-	           )}
+	           )}</span>
 	  #+END_QUERY
 	- More:
 	- #+BEGIN_QUERY
