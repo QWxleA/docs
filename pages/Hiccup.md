@@ -185,7 +185,7 @@ tags:: programming
   {
    :query [:find (pull ?b [*])
         :where
-        [property ?b :type "programming"]
+        [page-tag ?p #{"programming"}]
         ;[(get ?bprops :distanse "nil") ?bs]
         ;[(not= ?bs "nil")]
          ]
