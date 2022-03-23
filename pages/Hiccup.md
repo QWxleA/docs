@@ -122,7 +122,7 @@ difficulty:: intermediate
 		                ]
 		           )}
 		  #+END_QUERY
-- ### Table views
+- ### Table views, hiccup is just like good-looking html
 	- query-table:: false
 	  ```clojure
 	  #+BEGIN_QUERY
