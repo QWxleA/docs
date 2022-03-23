@@ -96,8 +96,10 @@ tags:: programming
 	- **Line 13:** is the most complex Hiccup line so far:
 		- `[:a {:href (str "#/page/" page)} (clojure.string/capitalize page)]`
 	- which translates to:
-		- ``
-	- On the outside you have a link: `[:a {first item} (second item) ]`, with two items inside, a list of attributes, and the body (As was explained before. It's a weird way of doing things. Sorry. It's Clojure.). The important part is how everything is strung together, and this single line of code you'll use with almost every custom view you build!
+		- `<a href="#/page/hiccup">Hiccup</a>`
+	- And if you look carefully, they are very much alike!
+		- The whole thing is wrapped in an `<a>` -> `[:a .... ]`
+		-
 		-
 	- query-table:: false
 	  page-list:: true
