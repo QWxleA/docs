@@ -189,7 +189,7 @@ tags:: programming
         ;[(get ?bprops :distanse "nil") ?bs]
         ;[(not= ?bs "nil")]
          ]
-  :view (fn [result] (for [r result] [:pre (pr-str r)]))
+  :view (fn [result] (for [r result] [:pre (pr-str (get r :block/name) r)]))
   }
   #+END_QUERY
 
