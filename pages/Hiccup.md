@@ -77,11 +77,31 @@ tags:: programming
    :view (fn [result]
   	         [:div.flex.flex-col
   	          (for [page result]
-  	            [:a {:href (str "#/page/" page)} (clojure.string/capitalize page)])])}
+  	            [:a {:href (str "#/page/" page)} (clojure.string/capitalize page)]
+                  )
+                ]
+           )}
   #+END_QUERY
   ```
-- Let's examine one of the [[Advanced Queries]], we are only interested in lines **11** to **13**. It is an excellent example how search results, clojure and hiccup can represent search results:
--
+- Let's examine one of the [[Advanced Queries]], we are only interested in lines **11** to **15**. It is an excellent example how search results, clojure and hiccup can represent search results:
+- **Line 11:**
+- #+BEGIN_QUERY
+  {:title [:h2 "All pages with a <b>programming</b> tag"]
+   :query [:find ?name
+   :in $ ?tag
+   :where
+    [?t :block/name ?tag]
+    [?p :block/tags ?t]
+    [?p :block/name ?name]]
+   :inputs ["programming"]
+   :view (fn [result]
+  	         [:div.flex.flex-col
+  	          (for [page result]
+  	            [:a {:href (str "#/page/" page)} (clojure.string/capitalize page)]
+                  )
+                ]
+           )}
+  #+END_QUERY
 - ### Expanding seqs
 - If you include a Clojure seq in the body of an element vector:
 - ```clojure
