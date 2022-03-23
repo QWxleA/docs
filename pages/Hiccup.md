@@ -184,6 +184,7 @@ tags:: programming
   {:title [:h2 "Programming languages list"]
    :query [:find (pull ?b [*])
            :where
+  
            [?b :block/properties ?p]
            [(get ?p "type") ?t]
            [(= "programming_lang" ?t)]]
