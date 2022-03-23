@@ -29,7 +29,8 @@
 		- ```html
 		  <h3>This is hiccup!</h3>
 		  ```
-	- Technically speaking, the Clojure data structure is a vector `[ .... ]` that takes one of the following forms:
+	- Technically speaking, the Clojure data structure is a vector (`[ .... ]`, just like [[Advanced Queries]] 
+	   searches) that takes one of the following forms:
 	- ```clojure
 	  [tag & body]
 	  [tag attributes & body]
