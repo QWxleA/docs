@@ -19,42 +19,40 @@
 	  ```
 	- Line 2 is written in Hiccup: `[:h3 "This is hiccup!"]`, this will be converted to: `<h3>This is hiccup!</h3>`
 	- `h3`, as used in Hiccup, is the same has an `H3` in HTML, and you can just as well use other HTML tags, like: `<p>` or `<b>`, which in Hiccup would be: `[:p "this is an HTML p tag"]` or `[:b "This is an HTML b (bold) tag"]`.
-	- For simple titles, that's (almost)
-	- Let's look in a bit more depth
-### Basic Syntax
-
-Hiccup turns Clojure data structures like this:
-
-```clojure
-[:a {:href "http://github.com"} "GitHub"]
-```
-
-Into strings of HTML like this:
-
-```html
-<a href="http://github.com">GitHub</a>
-```
-
-Using the [hiccup.core/html][1] macro.
-
-The Clojure data structure is a vector that takes one of the following forms:
-
-```clojure
-[tag & body]
-[tag attributes & body]
-```
-
-The first item in the vector is the tag name. It is mandatory, and should be a keyword, string or symbol.
-
-The second item may optionally be a map of attributes.
-
-All subsequent items in the vector are treated as the element body. This can include strings or nested tag vectors, for example:
-
-```clojure
-[:p "Hello " [:em "World!"]]
-```
-
-[1]: http://weavejester.github.com/hiccup/hiccup.core.html#var-html
+	- For simple titles, that's (almost) all you need. If you would like to add some css divs or classes to the mix, read on:
+- ### Basic Hiccup Syntax
+	- Hiccup turns Clojure data structures like this:
+	  
+	  ```clojure
+	  [:a {:href "http://github.com"} "GitHub"]
+	  ```
+	  
+	  Into strings of HTML like this:
+	  
+	  ```html
+	  <a href="http://github.com">GitHub</a>
+	  ```
+	  
+	  Using the [hiccup.core/html][1] macro.
+	  
+	  The Clojure data structure is a vector that takes one of the following forms:
+	  
+	  ```clojure
+	  [tag & body]
+	  [tag attributes & body]
+	  ```
+	  
+	  The first item in the vector is the tag name. It is mandatory, and should be a keyword, string or symbol.
+	  
+	  The second item may optionally be a map of attributes.
+	  
+	  All subsequent items in the vector are treated as the element body. This can include strings or nested tag vectors, for example:
+	  
+	  ```clojure
+	  [:p "Hello " [:em "World!"]]
+	  ```
+	  
+	  [1]: http://weavejester.github.com/hiccup/hiccup.core.html#var-html
 ### CSS-style sugar
 
 Hiccup provides a convenient shortcut for adding `id` and `class` attributes to an element. Instead of writing:
