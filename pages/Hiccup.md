@@ -184,10 +184,11 @@ tags:: programming
   {:title [:h2 "Programming languages list"]
    :query [:find (pull ?b [*])
            :where
-  
-           [?b :block/properties ?p]
-           [(get ?p "type") ?t]
-           [(= "programming_lang" ?t)]]
+           [property ?b :type "programming_lang"]
+           ;[?b :block/properties ?p]
+           ;[(get ?p "type") ?t]
+           ;[(= "programming_lang" ?t)]
+  ]
    :view (fn [result]
            (when (seq result)
              (let [blocks (flatten result)]
