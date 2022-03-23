@@ -187,8 +187,9 @@ tags:: programming
        [:block/name :block/journal-day]} :block/properties])
         :where
         [property ?b :type "programming_lang"]
-        [(get ?bprops :distanse "nil") ?bs]
-        [(not= ?bs "nil")]]
+        ;[(get ?bprops :distanse "nil") ?bs]
+        ;[(not= ?bs "nil")]
+         ]
   :result-transform (fn [result]
                        (sort-by (fn [s]
                           (get-in s [:block/page :block/journal-day])) (fn [a b] (compare b a)) result)) 
