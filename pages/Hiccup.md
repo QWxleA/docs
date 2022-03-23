@@ -5,7 +5,7 @@ tags:: programming
 - You can embed Hiccup inside block same as if you want to embed HTML.
 - Example:
 - Logseq uses Hiccup to generate HTML from [[clojurescript]] and [[datomic]], the languages Logseq and logseq queries are written in. For every day use you need very little knowledge of Hiccup, but some elements are bot h simple and useful.
-- ## Absolute simplest use of Hiccup
+- ## Let's Hiccup
 	- The most obvious thing you can use Hiccup for is to style the titles of [[Advanced Queries]]:
 	- ```clojure
 	  #+BEGIN_QUERY
@@ -29,7 +29,7 @@ tags:: programming
 		- ```html
 		  <h3>This is hiccup!</h3>
 		  ```
-	- Technically speaking, the Clojure data structure is a vector (`[ .... ]`, just like [[Advanced Queries]] 
+	- Technically speaking, the Clojure data structure is a vector (`[ .... ]`, just like [[Advanced Queries]] uses for
 	   searches) that takes one of the following forms:
 	- ```clojure
 	  [tag & body]
@@ -41,10 +41,8 @@ tags:: programming
 	- ```clojure
 	  [:p "Hello " [:em "World!"]]
 	  ```
+	- This definition might sound a bit obvious, but later you'll see how you can use the same syntax to create more complicated HTML structures, like lists (`<ul><li>...`) or tables (`<tr><th>...`).
 - ### Making it look nice with CSS
-	- [:h2 {:style {:color "red"}} "h2 title"]
-	    [:p "Hello " [:em "World!"]]
-
 	- There are two ways to add **ids** and **classes** to your html elements. The first is the most straight forward, and easy to read, but a bit long:
 	- ```clojure
 	  [:h3 {:id "mysearch" :class "underlined superpink"} "This is better looking Hiccup!"]
@@ -59,6 +57,14 @@ tags:: programming
 	- ```clojure
 	  [:div#post "..."]
 	  [:div.comment "..."]
+	  ```
+	- The crazy thing is, you can actually do this straight inside Logseq:
+    - [:h2 {:style {:color "red"}} "h2 title"]
+	  [:p "Hello " [:em "World!"]]
+    - is just:
+	- ```clojure
+		[:h2 {:style {:color "red"}} "h2 title"]
+	  [:p "Hello " [:em "World!"]]
 	  ```
 - ### Expanding seqs
   
