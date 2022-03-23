@@ -8,7 +8,16 @@
 - ## Absolute simplest use of Hiccup
 	- The very first thing you can use Hiccup for is to style **query-titles**
 	- ```clojure
+	  #+BEGIN_QUERY
+	  {:title [:h3 "This is hiccup!"]
+	   :query [:find (pull ?b [*])
+	   :where
+	      [task ?b #{"LATER"}]
+	   ]
+	  }
+	  #+END_QUERY
 	  ```
+	- Line 2
 ### Basic Syntax
 
 Hiccup turns Clojure data structures like this:
