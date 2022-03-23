@@ -6,7 +6,7 @@
 	    [:p "Hello " [:em "World!"]]
 - Logseq uses Hiccup to generate HTML from [[clojurescript]] and [[datomic]], the languages Logseq and logseq queries are written in. For every day use you need very little knowledge of Hiccup, but some elements are bot h simple and useful.
 - ## Absolute simplest use of Hiccup
-	- The most obvous thing you can use Hiccup for is to style the titles of advanced searches
+	- The most obvious thing you can use Hiccup for is to style the titles of [[Advanced Queries]]:
 	- ```clojure
 	  #+BEGIN_QUERY
 	  {:title [:h3 "This is hiccup!"]
@@ -17,6 +17,14 @@
 	  }
 	  #+END_QUERY
 	  ```
+	- #+BEGIN_QUERY
+	  {:title [:h3 "This is hiccup!"]
+	   :query [:find (pull ?b [*])
+	   :where
+	      [task ?b #{"LATER"}]
+	   ]
+	  }
+	  #+END_QUERY
 	- Line 2 is written in Hiccup: `[:h3 "This is hiccup!"]`, this will be converted to: `<h3>This is hiccup!</h3>`
 	- `h3`, as used in Hiccup, is the same has an `H3` in HTML, and you can just as well use other HTML tags, like: `<p>` or `<b>`, which in Hiccup would be: `[:p "this is an HTML p tag"]` or `[:b "This is an HTML b (bold) tag"]`.
 	- For simple titles, that's (almost) all you need. If you would like to add some css divs or classes to the mix, read on:
