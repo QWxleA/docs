@@ -66,7 +66,7 @@ tags:: programming
 	- [[Advanced Queries]] support custom-build views for search results. These views are a combination of (a small sub-set of) Clojure and Hiccup. It's not the easiest combination, but without a doubt you can build amazing things with it.
 	- ``` clojure
 	  #+BEGIN_QUERY
-	  [:span.simple{:title [:b "All pages with a " [:em "programming"] " tag"]
+	  {:title [:b "All pages with a " [:em "programming"] " tag"]
 	   :query [:find ?name
 	   :in $ ?tag
 	   :where
@@ -80,7 +80,7 @@ tags:: programming
 	  	            [:a {:href (str "#/page/" page)} (clojure.string/capitalize page)]
 	                  )
 	                ]
-	           )}]
+	           )}
 	  #+END_QUERY
 	  ```
 	- Let's examine one of the [[Advanced Queries]], we are only interested in lines **11** to **15**. It is an excellent example how search results, clojure and hiccup can represent search results:
@@ -102,24 +102,25 @@ tags:: programming
 		- Then you have the address `href="#/page/hiccup"` -> `(str "#/page/" page)`, which is Clojure for: **str** returns a string, in our case it concatenates (glues together)  `"#/page/"` and the value of `page`.
 		- Last you have the visible part of the link `Hiccup` -> `(clojure.string/capitalize page)`, which is not hard to guess, it capitalizes the value of `page`.
 		- **Note:** if you ever use this code, and `page` is a journal-page (which is a bunch of numbers), the whole thing will fail, so don't capitalize numbers, they don't like that.
-	- query-table:: false
-	  #+BEGIN_QUERY
-	  {:title [:b "All pages with a " [:em "programming"] " tag"]
-	   :query [:find ?name
-	   :in $ ?tag
-	   :where
-	    [?t :block/name ?tag]
-	    [?p :block/tags ?t]
-	    [?p :block/name ?name]]
-	   :inputs ["programming"]
-	   :view (fn [result]
-	  	         [:div.flex.flex-col
-	  	          (for [page result]
-	  	            [:a {:href (str "#/page/" page)} (clojure.string/capitalize page)]
-	                  )
-	                ]
-	           )}
-	  #+END_QUERY
+	- And this is what it looks like:
+		- query-table:: false
+		  #+BEGIN_QUERY
+		  {:title [:b "All pages with a " [:em "programming"] " tag"]
+		   :query [:find ?name
+		   :in $ ?tag
+		   :where
+		    [?t :block/name ?tag]
+		    [?p :block/tags ?t]
+		    [?p :block/name ?name]]
+		   :inputs ["programming"]
+		   :view (fn [result]
+		  	         [:div.flex.flex-col
+		  	          (for [page result]
+		  	            [:a {:href (str "#/page/" page)} (clojure.string/capitalize page)]
+		                  )
+		                ]
+		           )}
+		  #+END_QUERY
 	- More:
 	- #+BEGIN_QUERY
 	  {:title [:b "All pages with a " [:em "programming"] " tag"]
