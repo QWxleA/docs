@@ -214,6 +214,7 @@ difficulty:: intermediate
      [:td (get-in r [:block/properties :difficulty])] ])
      ]]
   )
+  :query-table false
   }
   #+END_QUERY
 -- ### Additional resources
