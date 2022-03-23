@@ -204,12 +204,12 @@ difficulty:: intermediate
   :view (fn [rows] [:table 
    [:thead 
     [:tr 
-     [:th "Language"] 
-     [:th "Creator"]
-     [:th "Description"] ] ] 
+     [:th "Page"] 
+     [:th "Language"]
+     [:th "Difficulty"] ] ] 
    [:tbody 
   (for [r rows] [:tr 
-     [:td (get r [:block/name])] 
+     [:td (get-in r [:block/page :block/name])] 
      [:td (get-in r [:block/properties :language])]
      [:td (get-in r [:block/properties :difficulty])] ])
      ]]
